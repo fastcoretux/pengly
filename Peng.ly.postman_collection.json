@@ -1,0 +1,65 @@
+{
+	"info": {
+		"name": "Peng.ly",
+		"_postman_id": "4a99d79b-55f8-46fb-5cb3-9d5513dbd8ed",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "init link",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"url\":\"https://www.google.com\",\n  \"maxCount\":3\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/rest/link/v1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"link",
+						"v1"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get link",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/rest/link/v1/inf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"link",
+						"v1",
+						"inf"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
