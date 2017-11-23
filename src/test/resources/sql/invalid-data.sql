@@ -1,0 +1,2 @@
+INSERT INTO pengly.link_alias(alias, url, used_count, max_count, status) VALUES ('max-zero', 'https://maxzero',  0, 0 , 'ACTIVE');
+INSERT INTO pengly.link_alias(alias, url, used_count, max_count, status) VALUES ('inconsistent', 'https://inconsistent',  6, 5 , 'ACTIVE');
