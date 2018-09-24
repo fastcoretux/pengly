@@ -1,8 +1,7 @@
 {
 	"info": {
-		"name": "Peng.ly",
 		"_postman_id": "4a99d79b-55f8-46fb-5cb3-9d5513dbd8ed",
-		"description": "",
+		"name": "Peng.ly",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -32,8 +31,7 @@
 						"link",
 						"v1"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -56,8 +54,62 @@
 						"v1",
 						"inf"
 					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get link (Azure)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://pengly-app.azurewebsites.net/rest/link/v1/inf",
+					"protocol": "https",
+					"host": [
+						"pengly-app",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"rest",
+						"link",
+						"v1",
+						"inf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "init link (Azure)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"url\":\"https://www.google.com\",\n  \"maxCount\":3\n}"
 				},
-				"description": ""
+				"url": {
+					"raw": "https://pengly-app.azurewebsites.net/rest/link/v1",
+					"protocol": "https",
+					"host": [
+						"pengly-app",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"rest",
+						"link",
+						"v1"
+					]
+				}
 			},
 			"response": []
 		}
