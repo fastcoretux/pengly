@@ -92,6 +92,7 @@
 					<resourceGroup>spring-boot</resourceGroup>
 					<appName>pengly-app</appName>
                     <javaVersion>${java.version}</javaVersion>
+					<region>westeurope</region>
 				</configuration>
 			</plugin>
 		</plugins>
