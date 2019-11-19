@@ -6,6 +6,7 @@ import javax.transaction.Transactional;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import lombok.val;
 import net.fastcoretux.web.pengly.dao.LinkAliasDao;
 import net.fastcoretux.web.pengly.domain.LinkAlias;
 import net.fastcoretux.web.pengly.service.LinkAliasService;
@@ -25,21 +26,22 @@ public class LinkAliasServiceImpl implements LinkAliasService {
 
     @Override
     public Optional<LinkAlias> get(final String uuid) {
-        final LinkAlias alias = dao.findOne(uuid);
-        if (alias == null) {
+        val alias = dao.findById(uuid);
+        if (!alias.isPresent()) {
             // not found
             return Optional.empty();
         }
 
-        alias.updateCount();
-        dao.save(alias);
-        if (!alias.isValid()) {
+        val foundAlias = alias.get();
+        foundAlias.updateCount();
+        dao.save(foundAlias);
+        if (!foundAlias.isValid()) {
             // no longer valid
             log.warn("Alias {} is not valid", alias);
             return Optional.empty();
         }
 
-        return Optional.of(alias);
+        return Optional.of(foundAlias);
     }
 
     @Override

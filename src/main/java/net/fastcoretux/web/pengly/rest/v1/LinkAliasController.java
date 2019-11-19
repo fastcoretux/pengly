@@ -30,13 +30,13 @@ public class LinkAliasController {
     private final LinkAliasService service;
 
     @GetMapping("{uuid}")
-    ResponseEntity<LinkAliasRE> get(@PathVariable final String uuid) {
+    public ResponseEntity<LinkAliasRE> get(@PathVariable final String uuid) {
         final Optional<LinkAlias> result = service.get(uuid);
         return result.isPresent() ? ResponseEntity.ok(mapper.map(result.get())) : ResponseEntity.notFound().build();
     }
 
     @PostMapping
-    ResponseEntity<String> init(@RequestBody @Valid final LinkAliasRE alias) {
+    public ResponseEntity<String> init(@RequestBody @Valid final LinkAliasRE alias) {
         final String result = service.init(mapper.map(alias));
         return ResponseEntity.ok(result);
     }
