@@ -8,6 +8,24 @@ with Spring Web MVC, Spring Data JPA, embedded HSQL database and Spring integrat
 * IntelliJ IDEA: Go to `AppBoot` class _(right click on class, select Create 'AppBoot')_
 * maven: mvn spring-boot:run
 
+### Run on Docker
+Prepare Docker image
+```
+docker build -t fascoretux/pengly .
+```
+
+Run Docker image
+```
+docker run -p 8080:8080 fastcoretux/pengly
+```
+
+### Run on Azure
+Deploy on Azure as App Service using [azure-webapp-maven-plugin](https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md).
+```
+az login
+mvn azure-webapp:deploy
+```
+
 ### Usage
 You can create link alias by calling
 ```
